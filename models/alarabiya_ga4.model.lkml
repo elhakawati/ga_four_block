@@ -3,6 +3,13 @@ connection: "alarabiya-ga4"
 # include all the views
 include: "/views/**/*.view.lkml"
 
+datagroup: ga4_main_datagroup {
+  sql_trigger:  SELECT CURRENT_DATE();;
+  max_cache_age: "3 hour"
+}
+
+persist_with: ga4_main_datagroup
+
 datagroup: alarabiya_ga4_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
@@ -94,4 +101,3 @@ explore: events_intraday_20240806 {
       relationship: one_to_many
     }
 }
-

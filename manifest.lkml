@@ -2,7 +2,7 @@ project_name: "ga_four"
 
 ## Connection Constants:
 constant: GA4_CONNECTION {
-  value: "bq-looker-marketplace"
+  value: "alarabiya-ga4"
   export: override_required
 }
 
